@@ -1,54 +1,88 @@
 <script>
 
-	var amount = +prompt('Please enter amount you need'); //1,2,5,10,20,50,100,200,500
-
+	var total_amount = +prompt('Please enter amount you need'); //1,2,5,10,20,50,100,200,500
+	var amount = total_amount;
 	var bankn_500 = amount / 500;
+
 	bankn_500 = Math.floor(bankn_500);
-	if (amount <= bankn_500 * 10) {
+	if (bankn_500 > 10) {
 		amount = amount - bankn_500 * 10;
+		bankn_500 = 10;
 	}
-	amount = amount - bankn_500 * 500;
 	console.log("Купюр по 500 грн " + bankn_500);
 
 	var bankn_200 = amount / 200;
 	bankn_200 = Math.floor(bankn_200);
-	amount = amount - bankn_200 * 200;
+	if (bankn_200 > 10) {
+		amount = amount - bankn_200 * 10;
+		bankn_200 = 10;
+	}
 	console.log("Купюр по 200 грн " + bankn_200);
 
 	var bankn_100 = amount / 100;
 	bankn_100 = Math.floor(bankn_100);
-	amount = amount - bankn_100 * 100;
+	if (bankn_100 > 10) {
+		amount = amount - bankn_100 * 10;
+		bankn_100 = 10;
+	}
 	console.log("Купюр по 100 грн " + bankn_100);
 
 	var bankn_50 = amount / 50;
 	bankn_50 = Math.floor(bankn_50);
-	amount = amount - bankn_50 * 50;
+	if (bankn_50 > 10) {
+		amount = amount - bankn_50 * 10;
+		bankn_50 = 10;
+	}
 	console.log("Купюр по 50 грн " + bankn_50);
 
 	var bankn_20 = amount / 20;
 	bankn_20 = Math.floor(bankn_20);
-	amount = amount - bankn_20 * 20;
+	if (bankn_20 > 10) {
+		amount = amount - bankn_20 * 10;
+		bankn_20 = 10;
+	}
 	console.log("Купюр по 20 грн " + bankn_20);
 
 	var bankn_10 = amount / 10;
 	bankn_10 = Math.floor(bankn_10);
-	amount = amount - bankn_10 * 10;
+	if (bankn_10 > 10) {
+		amount = amount - bankn_10 * 10;
+		bankn_10 = 10;
+	}
 	console.log("Купюр по 10 грн " + bankn_10);
 
 	var bankn_5 = amount / 5;
 	bankn_5 = Math.floor(bankn_5);
-	amount = amount - bankn_5 * 5;
+	if (bankn_5 > 10) {
+		amount = amount - bankn_5 * 10;
+		bankn_5 = 10;
+	}
 	console.log("Купюр по 5 грн " + bankn_5);
 
 	var bankn_2 = amount / 2;
 	bankn_2 = Math.floor(bankn_2);
-	amount = amount - bankn_2 * 2;
+	if (bankn_2 > 10) {
+		amount = amount - bankn_2 * 10;
+		bankn_2 = 10;
+	}
 	console.log("Купюр по 2 грн " + bankn_2);
 
 	var bankn_1 = amount / 1;
 	bankn_1 = Math.floor(bankn_1);
-	amount = amount - bankn_1 * 1;
+	if (bankn_1 > 10) {
+		amount = amount - bankn_1 * 10;
+		bankn_1 = 10;
+	}
 	console.log("Купюр по 1 грн " + bankn_1);
+
+	var sum_max = (500 * 10 + 200 * 10  + 100 * 10  + 50 * 10  + 20 * 10  + 10 * 10  + 5 * 10  + 2 * 10  + 1 * 10) ;
+	console.log("Максимальная возможная сумма " + sum_max);
+
+	if (total_amount > sum_max) {
+		balance = total_amount - sum_max;
+		console.log("Извините, возможно выдать максимум " + sum_max + "\n" + "Вы запросили " + total_amount +
+			"\n" + "Остаток на счету " + balance);
+	}
 
 	var bank_total = bankn_500 + bankn_200 + bankn_100 + bankn_50 + bankn_20 + bankn_10 + bankn_5 + bankn_2 + bankn_1;
 	console.log("Общее количество купюр " + bank_total);
